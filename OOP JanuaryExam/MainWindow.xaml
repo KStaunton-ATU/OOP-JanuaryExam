@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:OOP_JanuaryExam"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="radBtnAllRobots">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Filter" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="34" Width="55" FontWeight="Bold" FontSize="18"/>
+        <Label Grid.Column="1" Content="Robot List" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" Width="112" FontSize="18" FontWeight="Bold" Margin="0,42,0,0"/>
+        <Label Grid.Column="2" Content="Robot Details" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="31" Width="133" FontSize="18" FontWeight="Bold"/>
+        <RadioButton Content="ALL ROBOTS" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="radBtnHousehold" Content="HOUSEHOLD" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+        <RadioButton x:Name="radBtnDelivery" Content="DELIVERY" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <Image Margin="164,18,52,18" Grid.Row="1" Source="/robot.png" Stretch="Fill"/>
+        <Image Margin="164,18,52,18" Grid.Row="2" Source="/household-robot.png" Stretch="Fill"/>
+        <Image Margin="164,18,52,18" Grid.Row="3" Source="/delivery-robot.png" Stretch="Fill"/>
+        <ListBox x:Name="lbxRobotList" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="3" SelectionChanged="ListBox_SelectionChanged"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="90,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCharge" Grid.Column="2" Content="Charge" HorizontalAlignment="Center" Margin="0,80,0,0" Grid.Row="3" VerticalAlignment="Top" Width="153"/>
 
     </Grid>
 </Window>

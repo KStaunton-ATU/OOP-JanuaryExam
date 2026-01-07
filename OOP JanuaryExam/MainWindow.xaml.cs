@@ -11,9 +11,25 @@ using System.Windows.Shapes;
 
 namespace OOP_JanuaryExam
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    //public repo can be found at https://github.com/KStaunton-ATU/OOP-JanuaryExam
+    //Collaborator is keith.mcmanus@atu.ie
+    public enum HouseHoldSkill
+    {
+        Cooking,
+        Cleaning,
+        Laundry,
+        Gardening,
+        ChildCare
+    }
+
+    public enum DeliveryMode
+    {
+        Walking,
+        Driving,
+        Flying
+    }
+
+
     public partial class MainWindow : Window
     {
         public MainWindow()
