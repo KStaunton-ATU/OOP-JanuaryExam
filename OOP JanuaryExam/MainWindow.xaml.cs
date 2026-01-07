@@ -128,5 +128,48 @@ namespace OOP_JanuaryExam
                 }
             }
         }
+
+        private void radBtnAllRobots_Checked(object sender, RoutedEventArgs e)
+        {
+            //set source to global List (k)
+            lbxRobotList.ItemsSource = null;
+            lbxRobotList.ItemsSource = robots;
+        }
+
+        private void radBtnHousehold_Checked(object sender, RoutedEventArgs e)
+        {
+            //create filtered List from global List (k)
+            List<Robot> filteredList = new List<Robot>();
+
+            for (int i = 0; i < robots.Count; i++)
+            {
+                if(robots[i].RobotType == RobotType.HouseholdRobot)
+                {
+                    filteredList.Add(robots[i]);
+                }
+            }
+
+            //then set as source
+            lbxRobotList.ItemsSource = null;
+            lbxRobotList.ItemsSource = filteredList;
+        }
+
+        private void radBtnDelivery_Checked(object sender, RoutedEventArgs e)
+        {
+            //create filtered List from global List (k)
+            List<Robot> filteredList = new List<Robot>();
+
+            for (int i = 0; i < robots.Count; i++)
+            {
+                if (robots[i].RobotType == RobotType.DeliveryRobot)
+                {
+                    filteredList.Add(robots[i]);
+                }
+            }
+
+            //then set as source
+            lbxRobotList.ItemsSource = null;
+            lbxRobotList.ItemsSource = filteredList;
+        }
     }
 }

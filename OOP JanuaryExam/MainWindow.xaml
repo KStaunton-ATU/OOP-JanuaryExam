@@ -22,9 +22,9 @@
         <Label Content="Filter" HorizontalAlignment="Left" Margin="106,42,0,0" VerticalAlignment="Top" Height="34" Width="55" FontWeight="Bold" FontSize="18"/>
         <Label Grid.Column="2" Content="Robot List" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" Width="112" FontSize="18" FontWeight="Bold" Margin="0,42,0,0"/>
         <Label Grid.Column="3" Content="Robot Details" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="31" Width="133" FontSize="18" FontWeight="Bold"/>
-        <RadioButton x:Name="radBtnAllRobots1" Content="ALL ROBOTS" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <RadioButton x:Name="radBtnHousehold" Content="HOUSEHOLD" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
-        <RadioButton x:Name="radBtnDelivery" Content="DELIVERY" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center"/>
+        <RadioButton x:Name="radBtnAllRobots1" Content="ALL ROBOTS" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Checked="radBtnAllRobots_Checked"/>
+        <RadioButton x:Name="radBtnHousehold" Content="HOUSEHOLD" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Checked="radBtnHousehold_Checked"/>
+        <RadioButton x:Name="radBtnDelivery" Content="DELIVERY" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Checked="radBtnDelivery_Checked"/>
         <Image Margin="164,18,12,18" Grid.Row="1" Source="/robot.png" Stretch="Fill"/>
         <Image Margin="164,18,12,18" Grid.Row="2" Source="/household-robot.png" Stretch="Fill"/>
         <Image Margin="164,18,12,18" Grid.Row="3" Source="/delivery-robot.png" Stretch="Fill"/>
