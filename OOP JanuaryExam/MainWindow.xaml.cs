@@ -107,5 +107,26 @@ namespace OOP_JanuaryExam
                 tbxRobotDetails.Text = r.DescribeRobot();
             }
         }
+
+        private void btnCharge_Click(object sender, RoutedEventArgs e)
+        {
+            //charge robot to full capacity (j)
+            //get selected robot
+            if (lbxRobotList.SelectedItem != null)
+            {
+                Robot r = lbxRobotList.SelectedItem as Robot;
+
+                if(r.CurrentPowerKWH == r.PowerCapactyKWH)
+                {
+                    MessageBox.Show("Robot already fully charged.");
+                }
+                else
+                {
+                    //set charge to full capacity
+                    r.CurrentPowerKWH = r.PowerCapactyKWH;
+                    MessageBox.Show("Robot fully charged. Time taken: 3 hours, 25 minutes");
+                }
+            }
+        }
     }
 }

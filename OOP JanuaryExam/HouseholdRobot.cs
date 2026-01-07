@@ -21,7 +21,13 @@ namespace OOP_JanuaryExam
         //methods
         public override string DescribeRobot()
         {
-            string output = $"I am a household robot.\nI can help with chores around the house.\n\nHousehold Robot Skills:\n{this.Skills.ToString()}\n\n{this.ToString()}";
+            //prepare skills string
+            string skillsString = "";
+            for(int i = 0; i < Skills.Count; i++)
+            {
+                skillsString += $"- {Skills[i]}\n";
+            }
+            string output = $"I am a household robot.\nI can help with chores around the house.\n\nHousehold Robot Skills:\n{skillsString}\n\n{this.ToString()}";
             return output;
         }
 
