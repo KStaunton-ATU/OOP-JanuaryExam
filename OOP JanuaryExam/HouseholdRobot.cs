@@ -10,10 +10,24 @@ namespace OOP_JanuaryExam
     {
         private List<HouseHoldSkill> Skills;
 
+        //constructor
+        public HouseholdRobot()
+        {
+            //updating constructor (h)
+            Skills = new List<HouseHoldSkill>();
+            DownloadSkill(HouseHoldSkill.Cleaning);
+        }
+
+        //methods
         public override string DescribeRobot()
         {
             string output = $"I am a household robot.\nI can help with chores around the house.\n\nHousehold Robot Skills:\n{this.Skills.ToString()}\n\n{this.ToString()}";
             return output;
+        }
+
+        public void DownloadSkill(HouseHoldSkill skill)
+        {
+            Skills.Add(skill);
         }
     }
 }

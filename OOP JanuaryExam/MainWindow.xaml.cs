@@ -36,5 +36,41 @@ namespace OOP_JanuaryExam
         {
             InitializeComponent();
         }
+
+        public void createRobots()
+        {
+            //3 HouseHold, 3 Delivery (g)
+            HouseholdRobot h1 = new HouseholdRobot()
+            {
+                RobotName = "HouseBot"
+            };
+            HouseholdRobot h2 = new HouseholdRobot()
+            {
+                RobotName = "GardenMate"
+            };
+            HouseholdRobot h3 = new HouseholdRobot()
+            {
+                RobotName = "Housemate 3000"
+            };
+
+            DeliveryRobot d1 = new DeliveryRobot()
+            {
+                RobotName = "DeliverBot"
+            };
+            DeliveryRobot d2 = new DeliveryRobot()
+            {
+                RobotName = "Flybot"
+            };
+            DeliveryRobot d3 = new DeliveryRobot()
+            {
+                RobotName = "Driver"
+            };
+
+            //adding skills (h)
+            h2.DownloadSkill(HouseHoldSkill.Gardening);
+            h3.DownloadSkill(HouseHoldSkill.Cooking);
+            h3.DownloadSkill(HouseHoldSkill.Laundry);
+
+        }
     }
 }
