@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOP_JanuaryExam
 {
+    public enum RobotType
+    {
+        HouseholdRobot,
+        DeliveryRobot
+    }
     public abstract class Robot
     {
         //properties
         public string RobotName { get; set; }
+        public RobotType RobotType { get; set; }
         public double PowerCapactyKWH { get; set; }
         public double CurrentPowerKWH { get; set; }
 

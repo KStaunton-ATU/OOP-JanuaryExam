@@ -32,9 +32,20 @@ namespace OOP_JanuaryExam
 
     public partial class MainWindow : Window
     {
+        List<Robot> robots = new List<Robot>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void mainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //create robots and initialise global List
+            createRobots();
+
+            //display all robots in Listbox (i)
+            lbxRobotList.ItemsSource = null;
+            lbxRobotList.ItemsSource = robots;
         }
 
         public void createRobots()
@@ -42,28 +53,34 @@ namespace OOP_JanuaryExam
             //3 HouseHold, 3 Delivery (g)
             HouseholdRobot h1 = new HouseholdRobot()
             {
-                RobotName = "HouseBot"
+                RobotName = "HouseBot",
+                RobotType = RobotType.HouseholdRobot
             };
             HouseholdRobot h2 = new HouseholdRobot()
             {
-                RobotName = "GardenMate"
+                RobotName = "GardenMate",
+                RobotType = RobotType.HouseholdRobot
             };
             HouseholdRobot h3 = new HouseholdRobot()
             {
-                RobotName = "Housemate 3000"
+                RobotName = "Housemate 3000",
+                RobotType = RobotType.HouseholdRobot
             };
 
             DeliveryRobot d1 = new DeliveryRobot()
             {
-                RobotName = "DeliverBot"
+                RobotName = "DeliverBot",
+                RobotType = RobotType.DeliveryRobot
             };
             DeliveryRobot d2 = new DeliveryRobot()
             {
-                RobotName = "Flybot"
+                RobotName = "Flybot",
+                RobotType = RobotType.DeliveryRobot
             };
             DeliveryRobot d3 = new DeliveryRobot()
             {
-                RobotName = "Driver"
+                RobotName = "Driver",
+                RobotType = RobotType.DeliveryRobot
             };
 
             //adding skills (h)
@@ -71,6 +88,24 @@ namespace OOP_JanuaryExam
             h3.DownloadSkill(HouseHoldSkill.Cooking);
             h3.DownloadSkill(HouseHoldSkill.Laundry);
 
+            //add to global List collection
+            robots.Add(h1);
+            robots.Add(h2);
+            robots.Add(h3);
+            robots.Add(d1);
+            robots.Add(d2);
+            robots.Add(d3);
+        }
+
+        private void lbxRobotList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //get selected robot
+            if (lbxRobotList.SelectedItem != null)
+            {
+                Robot r = lbxRobotList.SelectedItem as Robot;
+                //display description in textbox (i)
+                tbxRobotDetails.Text = r.DescribeRobot();
+            }
         }
     }
 }
